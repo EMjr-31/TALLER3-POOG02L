@@ -9,7 +9,6 @@ namespace Taller3
     class Empleados
     {
         string nombre;
-        string apellido;
         DateTime fechaNac;
         string dUI;
         string correo;
@@ -20,5 +19,17 @@ namespace Taller3
         float iSSS;
         float descuentos;
         float sueldoNeto;
+
+        public string Nombre { get => nombre; set => nombre = value; }
+        public DateTime FechaNac { get => fechaNac; set => fechaNac = value; }
+        public string DUI { get => dUI; set => dUI = value; }
+        public string Correo { get => correo; set => correo = value; }
+        public string Tel { get => tel; set => tel = value; }
+        public DateTime FechaCont { get => fechaCont; set => fechaCont = value; }
+        public float SueldoBase { get => sueldoBase; set => sueldoBase = value; }
+        public float Renta { get => renta; set => renta = value; }
+        public float ISSS { get => iSSS; set => iSSS = value; }
+        public float Descuentos { get => descuentos; set => descuentos = value; }
+        public float SueldoNeto { get => sueldoNeto; set => sueldoNeto = value; }
     }
 }

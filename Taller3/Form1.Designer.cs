@@ -38,7 +38,7 @@ namespace Taller3
             this.Lblnombres = new System.Windows.Forms.Label();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnaceptar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nudISSS = new System.Windows.Forms.NumericUpDown();
             this.lblISSS = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@ namespace Taller3
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudISSS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRenta)).BeginInit();
@@ -155,13 +155,13 @@ namespace Taller3
             this.btnaceptar.UseVisualStyleBackColor = true;
             this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
             // 
-            // dataGridView1
+            // dgvEmpleados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 363);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(691, 200);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.Location = new System.Drawing.Point(15, 363);
+            this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.Size = new System.Drawing.Size(691, 200);
+            this.dgvEmpleados.TabIndex = 3;
             // 
             // groupBox2
             // 
@@ -276,6 +276,7 @@ namespace Taller3
             this.btnAbrirPlanilla.TabIndex = 5;
             this.btnAbrirPlanilla.Text = "Abrir Planilla";
             this.btnAbrirPlanilla.UseVisualStyleBackColor = true;
+            this.btnAbrirPlanilla.Click += new System.EventHandler(this.btnAbrirPlanilla_Click);
             // 
             // btnGenerarPlanilla
             // 
@@ -286,6 +287,7 @@ namespace Taller3
             this.btnGenerarPlanilla.TabIndex = 6;
             this.btnGenerarPlanilla.Text = "Generar Planilla";
             this.btnGenerarPlanilla.UseVisualStyleBackColor = true;
+            this.btnGenerarPlanilla.Click += new System.EventHandler(this.btnGenerarPlanilla_Click);
             // 
             // lblDUI
             // 
@@ -345,7 +347,7 @@ namespace Taller3
             this.Controls.Add(this.btnGenerarPlanilla);
             this.Controls.Add(this.btnAbrirPlanilla);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.btnaceptar);
             this.Controls.Add(this.btnnuevo);
             this.Controls.Add(this.groupBox1);
@@ -353,7 +355,7 @@ namespace Taller3
             this.Text = "Registro inicial de Empleados";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudISSS)).EndInit();
@@ -373,7 +375,7 @@ namespace Taller3
         private System.Windows.Forms.Label Lblnombres;
         private System.Windows.Forms.Button btnnuevo;
         private System.Windows.Forms.Button btnaceptar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.NumericUpDown nudISSS;
         private System.Windows.Forms.Label lblISSS;
