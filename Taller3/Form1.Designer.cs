@@ -50,6 +50,12 @@ namespace Taller3
             this.lblContrato = new System.Windows.Forms.Label();
             this.btnAbrirPlanilla = new System.Windows.Forms.Button();
             this.btnGenerarPlanilla = new System.Windows.Forms.Button();
+            this.lblDUI = new System.Windows.Forms.Label();
+            this.txtDUI = new System.Windows.Forms.MaskedTextBox();
+            this.txtTel = new System.Windows.Forms.MaskedTextBox();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -59,6 +65,12 @@ namespace Taller3
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.lblCorreo);
+            this.groupBox1.Controls.Add(this.txtTel);
+            this.groupBox1.Controls.Add(this.lblTel);
+            this.groupBox1.Controls.Add(this.txtDUI);
+            this.groupBox1.Controls.Add(this.lblDUI);
             this.groupBox1.Controls.Add(this.dtpFechanac);
             this.groupBox1.Controls.Add(this.txtapellidos);
             this.groupBox1.Controls.Add(this.txtnombres);
@@ -68,7 +80,7 @@ namespace Taller3
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(21, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 142);
+            this.groupBox1.Size = new System.Drawing.Size(332, 271);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos personales de empleados";
@@ -124,7 +136,7 @@ namespace Taller3
             // btnnuevo
             // 
             this.btnnuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnuevo.Location = new System.Drawing.Point(21, 181);
+            this.btnnuevo.Location = new System.Drawing.Point(24, 296);
             this.btnnuevo.Name = "btnnuevo";
             this.btnnuevo.Size = new System.Drawing.Size(122, 49);
             this.btnnuevo.TabIndex = 1;
@@ -135,17 +147,18 @@ namespace Taller3
             // btnaceptar
             // 
             this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaceptar.Location = new System.Drawing.Point(224, 181);
+            this.btnaceptar.Location = new System.Drawing.Point(227, 296);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(124, 49);
             this.btnaceptar.TabIndex = 2;
             this.btnaceptar.Text = "Proximo Empleado";
             this.btnaceptar.UseVisualStyleBackColor = true;
+            this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 259);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 363);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(691, 200);
             this.dataGridView1.TabIndex = 3;
@@ -163,7 +176,7 @@ namespace Taller3
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(359, 20);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(350, 142);
+            this.groupBox2.Size = new System.Drawing.Size(350, 270);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos laborales:";
@@ -257,7 +270,7 @@ namespace Taller3
             // btnAbrirPlanilla
             // 
             this.btnAbrirPlanilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirPlanilla.Location = new System.Drawing.Point(381, 181);
+            this.btnAbrirPlanilla.Location = new System.Drawing.Point(384, 296);
             this.btnAbrirPlanilla.Name = "btnAbrirPlanilla";
             this.btnAbrirPlanilla.Size = new System.Drawing.Size(110, 49);
             this.btnAbrirPlanilla.TabIndex = 5;
@@ -267,18 +280,68 @@ namespace Taller3
             // btnGenerarPlanilla
             // 
             this.btnGenerarPlanilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarPlanilla.Location = new System.Drawing.Point(584, 181);
+            this.btnGenerarPlanilla.Location = new System.Drawing.Point(587, 296);
             this.btnGenerarPlanilla.Name = "btnGenerarPlanilla";
             this.btnGenerarPlanilla.Size = new System.Drawing.Size(110, 49);
             this.btnGenerarPlanilla.TabIndex = 6;
             this.btnGenerarPlanilla.Text = "Generar Planilla";
             this.btnGenerarPlanilla.UseVisualStyleBackColor = true;
             // 
+            // lblDUI
+            // 
+            this.lblDUI.AutoSize = true;
+            this.lblDUI.Location = new System.Drawing.Point(16, 157);
+            this.lblDUI.Name = "lblDUI";
+            this.lblDUI.Size = new System.Drawing.Size(37, 18);
+            this.lblDUI.TabIndex = 6;
+            this.lblDUI.Text = "DUI:";
+            // 
+            // txtDUI
+            // 
+            this.txtDUI.Location = new System.Drawing.Point(171, 154);
+            this.txtDUI.Mask = "00000000-0";
+            this.txtDUI.Name = "txtDUI";
+            this.txtDUI.Size = new System.Drawing.Size(155, 24);
+            this.txtDUI.TabIndex = 7;
+            // 
+            // txtTel
+            // 
+            this.txtTel.Location = new System.Drawing.Point(171, 192);
+            this.txtTel.Mask = "0000-0000";
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(155, 24);
+            this.txtTel.TabIndex = 9;
+            // 
+            // lblTel
+            // 
+            this.lblTel.AutoSize = true;
+            this.lblTel.Location = new System.Drawing.Point(16, 195);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(70, 18);
+            this.lblTel.TabIndex = 8;
+            this.lblTel.Text = "Telefono:";
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Location = new System.Drawing.Point(16, 238);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(49, 18);
+            this.lblCorreo.TabIndex = 10;
+            this.lblCorreo.Text = "Email:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(171, 232);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(155, 24);
+            this.txtEmail.TabIndex = 11;
+            // 
             // frmRegistoEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 470);
+            this.ClientSize = new System.Drawing.Size(717, 579);
             this.Controls.Add(this.btnGenerarPlanilla);
             this.Controls.Add(this.btnAbrirPlanilla);
             this.Controls.Add(this.groupBox2);
@@ -322,6 +385,12 @@ namespace Taller3
         private System.Windows.Forms.Label lblContrato;
         private System.Windows.Forms.Button btnAbrirPlanilla;
         private System.Windows.Forms.Button btnGenerarPlanilla;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.MaskedTextBox txtTel;
+        private System.Windows.Forms.Label lblTel;
+        private System.Windows.Forms.MaskedTextBox txtDUI;
+        private System.Windows.Forms.Label lblDUI;
     }
 }
 

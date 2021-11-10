@@ -67,10 +67,31 @@ namespace Taller3
             btnaceptar.Enabled = true;
             btnnuevo.Enabled = false;
         }
+        ///Limipiar campos
+        public void LimpiaCampos()
+        {
+            ///Datos personales
+            txtnombres.Clear();
+            txtapellidos.Clear();
+            dtpFechanac.Value= DateTime.Today;
+            ///Datos laborales
+            dtpFechaContrato.Value = DateTime.Today;
+            txtSueldoini.Clear();
+            txtSueldoini.Clear();
+            nudRenta.Value = 0;
+            nudISSS.Value =0;
+            ///Enfacis 
+            txtnombres.Focus();
+        }
 
         private void btnnuevo_Click(object sender, EventArgs e)
         {
             ActivarIngreso();
+        }
+
+        private void btnaceptar_Click(object sender, EventArgs e)
+        {
+            LimpiaCampos();
         }
     }
 }
