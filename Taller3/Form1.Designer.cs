@@ -29,7 +29,14 @@ namespace Taller3
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.txtTel = new System.Windows.Forms.MaskedTextBox();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.txtDUI = new System.Windows.Forms.MaskedTextBox();
+            this.lblDUI = new System.Windows.Forms.Label();
             this.dtpFechanac = new System.Windows.Forms.DateTimePicker();
             this.txtapellidos = new System.Windows.Forms.TextBox();
             this.txtnombres = new System.Windows.Forms.TextBox();
@@ -50,17 +57,13 @@ namespace Taller3
             this.lblContrato = new System.Windows.Forms.Label();
             this.btnAbrirPlanilla = new System.Windows.Forms.Button();
             this.btnGenerarPlanilla = new System.Windows.Forms.Button();
-            this.lblDUI = new System.Windows.Forms.Label();
-            this.txtDUI = new System.Windows.Forms.MaskedTextBox();
-            this.txtTel = new System.Windows.Forms.MaskedTextBox();
-            this.lblTel = new System.Windows.Forms.Label();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudISSS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -78,19 +81,78 @@ namespace Taller3
             this.groupBox1.Controls.Add(this.Lblapellidos);
             this.groupBox1.Controls.Add(this.Lblnombres);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(21, 19);
+            this.groupBox1.Location = new System.Drawing.Point(19, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 271);
+            this.groupBox1.Size = new System.Drawing.Size(352, 271);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos personales de empleados";
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(171, 232);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(155, 24);
+            this.txtEmail.TabIndex = 11;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
+            this.txtEmail.Validated += new System.EventHandler(this.txtEmail_Validated);
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Location = new System.Drawing.Point(16, 238);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(49, 18);
+            this.lblCorreo.TabIndex = 10;
+            this.lblCorreo.Text = "Email:";
+            // 
+            // txtTel
+            // 
+            this.txtTel.Location = new System.Drawing.Point(171, 192);
+            this.txtTel.Mask = "0000-0000";
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(155, 24);
+            this.txtTel.TabIndex = 9;
+            this.txtTel.Validated += new System.EventHandler(this.txtTel_Validated);
+            // 
+            // lblTel
+            // 
+            this.lblTel.AutoSize = true;
+            this.lblTel.Location = new System.Drawing.Point(16, 195);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(70, 18);
+            this.lblTel.TabIndex = 8;
+            this.lblTel.Text = "Telefono:";
+            // 
+            // txtDUI
+            // 
+            this.txtDUI.Location = new System.Drawing.Point(171, 154);
+            this.txtDUI.Mask = "00000000-0";
+            this.txtDUI.Name = "txtDUI";
+            this.txtDUI.Size = new System.Drawing.Size(155, 24);
+            this.txtDUI.TabIndex = 7;
+            this.txtDUI.Validated += new System.EventHandler(this.txtDUI_Validated);
+            // 
+            // lblDUI
+            // 
+            this.lblDUI.AutoSize = true;
+            this.lblDUI.Location = new System.Drawing.Point(16, 157);
+            this.lblDUI.Name = "lblDUI";
+            this.lblDUI.Size = new System.Drawing.Size(37, 18);
+            this.lblDUI.TabIndex = 6;
+            this.lblDUI.Text = "DUI:";
+            // 
             // dtpFechanac
             // 
+            this.dtpFechanac.CustomFormat = "yyyy-MM-dd";
+            this.dtpFechanac.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtpFechanac.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechanac.Location = new System.Drawing.Point(171, 108);
             this.dtpFechanac.Name = "dtpFechanac";
             this.dtpFechanac.Size = new System.Drawing.Size(157, 24);
             this.dtpFechanac.TabIndex = 5;
+            this.dtpFechanac.ValueChanged += new System.EventHandler(this.dtpFechanac_ValueChanged);
+            this.dtpFechanac.Validated += new System.EventHandler(this.dtpFechanac_Validated);
             // 
             // txtapellidos
             // 
@@ -98,6 +160,8 @@ namespace Taller3
             this.txtapellidos.Name = "txtapellidos";
             this.txtapellidos.Size = new System.Drawing.Size(155, 24);
             this.txtapellidos.TabIndex = 4;
+            this.txtapellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtapellidos_KeyPress);
+            this.txtapellidos.Validated += new System.EventHandler(this.txtapellidos_Validated);
             // 
             // txtnombres
             // 
@@ -105,6 +169,8 @@ namespace Taller3
             this.txtnombres.Name = "txtnombres";
             this.txtnombres.Size = new System.Drawing.Size(155, 24);
             this.txtnombres.TabIndex = 3;
+            this.txtnombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombres_KeyPress);
+            this.txtnombres.Validated += new System.EventHandler(this.txtnombres_Validated);
             // 
             // Lblfechanac
             // 
@@ -158,7 +224,7 @@ namespace Taller3
             // dgvEmpleados
             // 
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(15, 363);
+            this.dgvEmpleados.Location = new System.Drawing.Point(24, 363);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.Size = new System.Drawing.Size(691, 200);
             this.dgvEmpleados.TabIndex = 3;
@@ -174,7 +240,7 @@ namespace Taller3
             this.groupBox2.Controls.Add(this.lblSueldo);
             this.groupBox2.Controls.Add(this.lblContrato);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(359, 20);
+            this.groupBox2.Location = new System.Drawing.Point(377, 20);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(350, 270);
             this.groupBox2.TabIndex = 4;
@@ -225,6 +291,7 @@ namespace Taller3
             this.nudRenta.Name = "nudRenta";
             this.nudRenta.Size = new System.Drawing.Size(72, 24);
             this.nudRenta.TabIndex = 10;
+            this.nudRenta.Validated += new System.EventHandler(this.nudRenta_Validated);
             // 
             // dtpFechaContrato
             // 
@@ -239,6 +306,8 @@ namespace Taller3
             this.txtSueldoini.Name = "txtSueldoini";
             this.txtSueldoini.Size = new System.Drawing.Size(155, 24);
             this.txtSueldoini.TabIndex = 7;
+            this.txtSueldoini.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldoini_KeyPress_1);
+            this.txtSueldoini.Validated += new System.EventHandler(this.txtSueldoini_Validated);
             // 
             // lblRenta
             // 
@@ -270,7 +339,7 @@ namespace Taller3
             // btnAbrirPlanilla
             // 
             this.btnAbrirPlanilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirPlanilla.Location = new System.Drawing.Point(384, 296);
+            this.btnAbrirPlanilla.Location = new System.Drawing.Point(397, 296);
             this.btnAbrirPlanilla.Name = "btnAbrirPlanilla";
             this.btnAbrirPlanilla.Size = new System.Drawing.Size(110, 49);
             this.btnAbrirPlanilla.TabIndex = 5;
@@ -281,7 +350,7 @@ namespace Taller3
             // btnGenerarPlanilla
             // 
             this.btnGenerarPlanilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarPlanilla.Location = new System.Drawing.Point(587, 296);
+            this.btnGenerarPlanilla.Location = new System.Drawing.Point(617, 296);
             this.btnGenerarPlanilla.Name = "btnGenerarPlanilla";
             this.btnGenerarPlanilla.Size = new System.Drawing.Size(110, 49);
             this.btnGenerarPlanilla.TabIndex = 6;
@@ -289,61 +358,15 @@ namespace Taller3
             this.btnGenerarPlanilla.UseVisualStyleBackColor = true;
             this.btnGenerarPlanilla.Click += new System.EventHandler(this.btnGenerarPlanilla_Click);
             // 
-            // lblDUI
+            // epError
             // 
-            this.lblDUI.AutoSize = true;
-            this.lblDUI.Location = new System.Drawing.Point(16, 157);
-            this.lblDUI.Name = "lblDUI";
-            this.lblDUI.Size = new System.Drawing.Size(37, 18);
-            this.lblDUI.TabIndex = 6;
-            this.lblDUI.Text = "DUI:";
-            // 
-            // txtDUI
-            // 
-            this.txtDUI.Location = new System.Drawing.Point(171, 154);
-            this.txtDUI.Mask = "00000000-0";
-            this.txtDUI.Name = "txtDUI";
-            this.txtDUI.Size = new System.Drawing.Size(155, 24);
-            this.txtDUI.TabIndex = 7;
-            // 
-            // txtTel
-            // 
-            this.txtTel.Location = new System.Drawing.Point(171, 192);
-            this.txtTel.Mask = "0000-0000";
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(155, 24);
-            this.txtTel.TabIndex = 9;
-            // 
-            // lblTel
-            // 
-            this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(16, 195);
-            this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(70, 18);
-            this.lblTel.TabIndex = 8;
-            this.lblTel.Text = "Telefono:";
-            // 
-            // lblCorreo
-            // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(16, 238);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(49, 18);
-            this.lblCorreo.TabIndex = 10;
-            this.lblCorreo.Text = "Email:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(171, 232);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(155, 24);
-            this.txtEmail.TabIndex = 11;
+            this.epError.ContainerControl = this;
             // 
             // frmRegistoEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 579);
+            this.ClientSize = new System.Drawing.Size(739, 597);
             this.Controls.Add(this.btnGenerarPlanilla);
             this.Controls.Add(this.btnAbrirPlanilla);
             this.Controls.Add(this.groupBox2);
@@ -360,6 +383,7 @@ namespace Taller3
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudISSS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,6 +417,7 @@ namespace Taller3
         private System.Windows.Forms.Label lblTel;
         private System.Windows.Forms.MaskedTextBox txtDUI;
         private System.Windows.Forms.Label lblDUI;
+        private System.Windows.Forms.ErrorProvider epError;
     }
 }
 

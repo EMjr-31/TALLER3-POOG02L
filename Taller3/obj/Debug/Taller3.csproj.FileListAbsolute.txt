@@ -8,3 +8,13 @@ C:\Users\EMjr\Desktop\Taller3\Taller3\obj\Debug\Taller3.csproj.GenerateResource.
 C:\Users\EMjr\Desktop\Taller3\Taller3\obj\Debug\Taller3.csproj.CoreCompileInputs.cache
 C:\Users\EMjr\Desktop\Taller3\Taller3\obj\Debug\Taller3.exe
 C:\Users\EMjr\Desktop\Taller3\Taller3\obj\Debug\Taller3.pdb
+C:\Users\kevin\OneDrive\Escritorio\Taller3\Taller3\bin\Debug\Taller3.exe.config
+C:\Users\kevin\OneDrive\Escritorio\Taller3\Taller3\bin\Debug\Taller3.exe
+C:\Users\kevin\OneDrive\Escritorio\Taller3\Taller3\bin\Debug\Taller3.pdb
+C:\Users\kevin\OneDrive\Escritorio\Taller3\Taller3\obj\Debug\Taller3.csproj.AssemblyReference.cache
+C:\Users\kevin\OneDrive\Escritorio\Taller3\Taller3\obj\Debug\Taller3.frmRegistoEmpleados.resources
+C:\Users\kevin\OneDrive\Escritorio\Taller3\Taller3\obj\Debug\Taller3.Properties.Resources.resources
+C:\Users\kevin\OneDrive\Escritorio\Taller3\Taller3\obj\Debug\Taller3.csproj.GenerateResource.cache
+C:\Users\kevin\OneDrive\Escritorio\Taller3\Taller3\obj\Debug\Taller3.csproj.CoreCompileInputs.cache
+C:\Users\kevin\OneDrive\Escritorio\Taller3\Taller3\obj\Debug\Taller3.exe
+C:\Users\kevin\OneDrive\Escritorio\Taller3\Taller3\obj\Debug\Taller3.pdb
